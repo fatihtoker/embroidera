@@ -1,0 +1,68 @@
+/* ============================================
+   Stitch Text Animation — Multi-variant
+   Needle reveals stitched text via clipPath.
+   Text stays as dashed strokes (never fills).
+   ============================================ */
+
+.stitch-anim {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.stitch-anim__svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+/* Main text — stroke-only, dashed to look like stitches.
+   strokeDasharray & strokeWidth set inline per variant. */
+.stitch-anim__text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  fill: none;
+  stroke: var(--color-cream, #F8F4EF);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Shadow text — subtle depth behind stitches */
+.stitch-anim__shadow {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  fill: rgba(248, 244, 239, 0.08);
+  stroke: none;
+}
+
+/* Needle dot — all movement & opacity controlled by JS */
+.stitch-anim__needle {
+  fill: var(--color-secondary, #C17B4A);
+  opacity: 0;
+  filter: drop-shadow(0 0 4px rgba(193, 123, 74, 0.7));
+}
+
+/* Decorations — fade in after stitching completes */
+.stitch-anim__deco {
+  animation: decoAppear 0.8s ease-out 4s forwards;
+}
+
+@keyframes decoAppear {
+  to { opacity: 1; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .stitch-anim {
+    width: 92%;
+  }
+
+  .stitch-anim__text,
+  .stitch-anim__shadow {
+    font-size: 28px !important;
+  }
+}

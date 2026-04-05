@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import StitchText from './StitchText';
 import '../styles/hero.css';
 
 export default function Hero() {
@@ -7,9 +8,6 @@ export default function Hero() {
 
   return (
     <section className="hero" aria-label="Hero">
-      {/* Decorative thread */}
-      <div className="hero__thread" aria-hidden="true" />
-
       {/* Floating dots */}
       <div className="hero__dot" aria-hidden="true" />
       <div className="hero__dot" aria-hidden="true" />
@@ -17,11 +15,12 @@ export default function Hero() {
 
       {/* Embroidery hoop decoration */}
       <div className="hero__hoop" aria-hidden="true">
-        <div className="hero__hoop-inner" />
+        <div className="hero__hoop-fabric" />
+        <StitchText />
       </div>
 
       <div className="hero__content">
-        <span className="hero__eyebrow">Embroidera</span>
+        <span className="hero__eyebrow">embroidera</span>
         <h1 className="hero__title">
           {t('hero.title')}
         </h1>
