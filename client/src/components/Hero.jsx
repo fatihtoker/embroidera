@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import StitchText from './StitchText';
+import ScrollStitch from './ScrollStitch';
 import '../styles/hero.css';
 
 export default function Hero() {
@@ -8,6 +9,7 @@ export default function Hero() {
 
   return (
     <section className="hero" aria-label="Hero">
+      <ScrollStitch />
       {/* Floating dots */}
       <div className="hero__dot" aria-hidden="true" />
       <div className="hero__dot" aria-hidden="true" />
