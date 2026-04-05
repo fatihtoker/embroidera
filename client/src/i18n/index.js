@@ -4,7 +4,25 @@ import en from './en.json';
 import nl from './nl.json';
 import tr from './tr.json';
 
-const savedLang = typeof window !== 'undefined' ? localStorage.getItem('lang') : null;
+const SUPPORTED_LANGS = ['en', 'nl', 'tr'];
+
+function detectLanguage() {
+  // 1. Previously saved preference
+  const saved = typeof window !== 'undefined' ? localStorage.getItem('lang') : null;
+  if (saved && SUPPORTED_LANGS.includes(saved)) return saved;
+
+  // 2. Browser language
+  if (typeof navigator !== 'undefined') {
+    const browserLangs = navigator.languages || [navigator.language];
+    for (const lang of browserLangs) {
+      const code = lang.split('-')[0].toLowerCase();
+      if (SUPPORTED_LANGS.includes(code)) return code;
+    }
+  }
+
+  // 3. Fallback
+  return 'en';
+}
 
 i18n.use(initReactI18next).init({
   resources: {
@@ -12,7 +30,7 @@ i18n.use(initReactI18next).init({
     nl: { translation: nl },
     tr: { translation: tr },
   },
-  lng: savedLang || 'en',
+  lng: detectLanguage(),
   fallbackLng: 'en',
   interpolation: {
     escapeValue: false,
