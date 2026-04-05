@@ -1,11 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../../context/AuthContext';
 import { api } from '../../lib/api';
 
 export default function AdminMessages() {
   const { t } = useTranslation();
-  const { token } = useAuth();
 
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -13,7 +11,7 @@ export default function AdminMessages() {
   const load = async () => {
     setLoading(true);
     try {
-      const data = await api.getMessages(token);
+      const data = await api.getMessages();
       setMessages(data);
     } catch {
       // silently fail
@@ -21,11 +19,11 @@ export default function AdminMessages() {
     setLoading(false);
   };
 
-  useEffect(() => { load(); }, [token]);
+  useEffect(() => { load(); }, []);
 
   const handleMarkRead = async (id) => {
     try {
-      await api.markRead(id, token);
+      await api.markRead(id);
       setMessages((prev) =>
         prev.map((m) => (m.id === id ? { ...m, read: true } : m))
       );
@@ -37,7 +35,7 @@ export default function AdminMessages() {
   const handleDelete = async (id) => {
     if (!confirm(t('admin.confirm_delete'))) return;
     try {
-      await api.deleteMessage(id, token);
+      await api.deleteMessage(id);
       setMessages((prev) => prev.filter((m) => m.id !== id));
     } catch (err) {
       alert(err.message);

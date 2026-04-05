@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../../context/AuthContext';
 import { api } from '../../lib/api';
 
 const EMPTY_FORM = {
@@ -12,7 +11,6 @@ const EMPTY_FORM = {
 
 export default function AdminProducts() {
   const { t } = useTranslation();
-  const { token } = useAuth();
 
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +22,7 @@ export default function AdminProducts() {
   const load = async () => {
     setLoading(true);
     try {
-      const data = await api.getProductsAll(token);
+      const data = await api.getProductsAll();
       setProducts(data);
     } catch {
       // silently fail
@@ -32,7 +30,7 @@ export default function AdminProducts() {
     setLoading(false);
   };
 
-  useEffect(() => { load(); }, [token]);
+  useEffect(() => { load(); }, []);
 
   const openNew = () => {
     setForm(EMPTY_FORM);
@@ -61,7 +59,7 @@ export default function AdminProducts() {
     if (!file) return;
     setUploading(true);
     try {
-      const { url } = await api.uploadImage(file, token);
+      const { url } = await api.uploadImage(file);
       setForm((prev) => ({ ...prev, images: [...prev.images, url] }));
     } catch (err) {
       alert(err.message);
@@ -82,9 +80,9 @@ export default function AdminProducts() {
 
     try {
       if (editing === 'new') {
-        await api.createProduct(form, token);
+        await api.createProduct(form);
       } else {
-        await api.updateProduct(editing, form, token);
+        await api.updateProduct(editing, form);
       }
       setEditing(null);
       load();
@@ -97,7 +95,7 @@ export default function AdminProducts() {
   const handleDelete = async (id) => {
     if (!confirm(t('admin.confirm_delete'))) return;
     try {
-      await api.deleteProduct(id, token);
+      await api.deleteProduct(id);
       load();
     } catch (err) {
       alert(err.message);

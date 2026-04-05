@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useAuth } from '../../context/AuthContext';
 import { api } from '../../lib/api';
 
 const EMPTY_FORM = {
@@ -12,7 +11,6 @@ const EMPTY_FORM = {
 
 export default function AdminWorkshops() {
   const { t } = useTranslation();
-  const { token } = useAuth();
 
   const [workshops, setWorkshops] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,7 +22,7 @@ export default function AdminWorkshops() {
   const load = async () => {
     setLoading(true);
     try {
-      const data = await api.getWorkshopsAll(token);
+      const data = await api.getWorkshopsAll();
       setWorkshops(data);
     } catch {
       // silently fail
@@ -32,7 +30,7 @@ export default function AdminWorkshops() {
     setLoading(false);
   };
 
-  useEffect(() => { load(); }, [token]);
+  useEffect(() => { load(); }, []);
 
   const openNew = () => {
     setForm(EMPTY_FORM);
@@ -63,7 +61,7 @@ export default function AdminWorkshops() {
     if (!file) return;
     setUploading(true);
     try {
-      const { url } = await api.uploadImage(file, token);
+      const { url } = await api.uploadImage(file);
       setForm((prev) => ({ ...prev, image_url: url }));
     } catch (err) {
       alert(err.message);
@@ -84,9 +82,9 @@ export default function AdminWorkshops() {
 
     try {
       if (editing === 'new') {
-        await api.createWorkshop(payload, token);
+        await api.createWorkshop(payload);
       } else {
-        await api.updateWorkshop(editing, payload, token);
+        await api.updateWorkshop(editing, payload);
       }
       setEditing(null);
       load();
@@ -99,7 +97,7 @@ export default function AdminWorkshops() {
   const handleDelete = async (id) => {
     if (!confirm(t('admin.confirm_delete'))) return;
     try {
-      await api.deleteWorkshop(id, token);
+      await api.deleteWorkshop(id);
       load();
     } catch (err) {
       alert(err.message);

@@ -1,66 +1,132 @@
-const API_BASE = '/api';
+import { supabase } from './supabase';
 
 /**
- * Helper to make authenticated API calls.
- * Automatically attaches the Supabase session token.
+ * Data layer — talks directly to Supabase (no backend needed).
+ * RLS policies handle authorization:
+ *   - Anonymous users can only read published content
+ *   - Authenticated users (admin) have full CRUD access
  */
-async function request(endpoint, options = {}) {
-  const { method = 'GET', body, token, headers: customHeaders = {} } = options;
 
-  const headers = { ...customHeaders };
-
-  if (token) {
-    headers['Authorization'] = `Bearer ${token}`;
-  }
-
-  if (body && !(body instanceof FormData)) {
-    headers['Content-Type'] = 'application/json';
-  }
-
-  const res = await fetch(`${API_BASE}${endpoint}`, {
-    method,
-    headers,
-    body: body instanceof FormData ? body : body ? JSON.stringify(body) : undefined,
-  });
-
-  if (res.status === 204) return null;
-
-  const data = await res.json();
-
-  if (!res.ok) {
-    throw new Error(data.error || `Request failed with status ${res.status}`);
-  }
-
-  return data;
+function throwIfError(result) {
+  if (result.error) throw new Error(result.error.message);
+  return result.data;
 }
 
 export const api = {
-  // Workshops
-  getWorkshops: () => request('/workshops'),
-  getWorkshopsAll: (token) => request('/workshops/all', { token }),
-  getWorkshop: (id) => request(`/workshops/${id}`),
-  createWorkshop: (body, token) => request('/workshops', { method: 'POST', body, token }),
-  updateWorkshop: (id, body, token) => request(`/workshops/${id}`, { method: 'PUT', body, token }),
-  deleteWorkshop: (id, token) => request(`/workshops/${id}`, { method: 'DELETE', token }),
+  // ── Workshops ─────────────────────────────────────────
+  getWorkshops: async () =>
+    throwIfError(
+      await supabase
+        .from('workshops')
+        .select('*')
+        .eq('status', 'published')
+        .order('date', { ascending: true })
+    ),
 
-  // Products
-  getProducts: () => request('/products'),
-  getProductsAll: (token) => request('/products/all', { token }),
-  getProduct: (id) => request(`/products/${id}`),
-  createProduct: (body, token) => request('/products', { method: 'POST', body, token }),
-  updateProduct: (id, body, token) => request(`/products/${id}`, { method: 'PUT', body, token }),
-  deleteProduct: (id, token) => request(`/products/${id}`, { method: 'DELETE', token }),
+  getWorkshopsAll: async () =>
+    throwIfError(
+      await supabase
+        .from('workshops')
+        .select('*')
+        .order('created_at', { ascending: false })
+    ),
 
-  // Upload
-  uploadImage: (file, token) => {
-    const formData = new FormData();
-    formData.append('image', file);
-    return request('/upload', { method: 'POST', body: formData, token });
+  getWorkshop: async (id) =>
+    throwIfError(
+      await supabase.from('workshops').select('*').eq('id', id).single()
+    ),
+
+  createWorkshop: async (body) =>
+    throwIfError(
+      await supabase.from('workshops').insert(body).select().single()
+    ),
+
+  updateWorkshop: async (id, body) =>
+    throwIfError(
+      await supabase.from('workshops').update(body).eq('id', id).select().single()
+    ),
+
+  deleteWorkshop: async (id) =>
+    throwIfError(await supabase.from('workshops').delete().eq('id', id)),
+
+  // ── Products ──────────────────────────────────────────
+  getProducts: async () =>
+    throwIfError(
+      await supabase
+        .from('products')
+        .select('*')
+        .eq('status', 'published')
+        .order('created_at', { ascending: false })
+    ),
+
+  getProductsAll: async () =>
+    throwIfError(
+      await supabase
+        .from('products')
+        .select('*')
+        .order('created_at', { ascending: false })
+    ),
+
+  getProduct: async (id) =>
+    throwIfError(
+      await supabase.from('products').select('*').eq('id', id).single()
+    ),
+
+  createProduct: async (body) =>
+    throwIfError(
+      await supabase.from('products').insert(body).select().single()
+    ),
+
+  updateProduct: async (id, body) =>
+    throwIfError(
+      await supabase.from('products').update(body).eq('id', id).select().single()
+    ),
+
+  deleteProduct: async (id) =>
+    throwIfError(await supabase.from('products').delete().eq('id', id)),
+
+  // ── Image Upload (direct to Supabase Storage) ────────
+  uploadImage: async (file) => {
+    const ext = file.name.split('.').pop();
+    const fileName = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.${ext}`;
+    const filePath = `uploads/${fileName}`;
+
+    const { error } = await supabase.storage
+      .from('media')
+      .upload(filePath, file, { contentType: file.type, upsert: false });
+
+    if (error) throw new Error(error.message);
+
+    const { data } = supabase.storage.from('media').getPublicUrl(filePath);
+    return { url: data.publicUrl };
   },
 
-  // Contact
-  sendContact: (body) => request('/contact', { method: 'POST', body }),
-  getMessages: (token) => request('/contact', { token }),
-  markRead: (id, token) => request(`/contact/${id}/read`, { method: 'PUT', token }),
-  deleteMessage: (id, token) => request(`/contact/${id}`, { method: 'DELETE', token }),
+  // ── Contact ───────────────────────────────────────────
+  sendContact: async ({ name, email, subject, message }) =>
+    throwIfError(
+      await supabase
+        .from('contact_messages')
+        .insert({ name, email, subject, message })
+    ),
+
+  getMessages: async () =>
+    throwIfError(
+      await supabase
+        .from('contact_messages')
+        .select('*')
+        .order('created_at', { ascending: false })
+    ),
+
+  markRead: async (id) =>
+    throwIfError(
+      await supabase
+        .from('contact_messages')
+        .update({ read: true })
+        .eq('id', id)
+    ),
+
+  deleteMessage: async (id) =>
+    throwIfError(
+      await supabase.from('contact_messages').delete().eq('id', id)
+    ),
 };
