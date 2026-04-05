@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
 import LanguageSwitcher from './LanguageSwitcher';
+import ThemeToggle from './ThemeToggle';
 import '../styles/navbar.css';
 
 const NAV_ITEMS = [
@@ -15,6 +17,7 @@ const NAV_ITEMS = [
 export default function Navbar() {
   const { t } = useTranslation();
   const location = useLocation();
+  const { isDark } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -37,7 +40,11 @@ export default function Navbar() {
     >
       <div className="navbar__inner">
         <Link to="/" className="navbar__logo" aria-label="Embroidera home">
-          Embroidera
+          <img
+            src={isDark ? '/embroidera-wordmark-light.png' : '/embroidera-wordmark-dark.png'}
+            alt="embroidera"
+            className="navbar__logo-img"
+          />
         </Link>
 
         <ul className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
@@ -56,6 +63,7 @@ export default function Navbar() {
         </ul>
 
         <div className="navbar__actions">
+          <ThemeToggle />
           <LanguageSwitcher />
           <button
             className={`navbar__toggle ${menuOpen ? 'navbar__toggle--open' : ''}`}

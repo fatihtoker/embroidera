@@ -28,6 +28,11 @@
   color: var(--color-cream);
 }
 
+.footer__logo-img {
+  width: 180px;
+  height: auto;
+}
+
 .footer__tagline {
   font-size: var(--text-sm);
   color: var(--color-text-muted);

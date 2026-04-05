@@ -80,3 +80,35 @@
   --duration-normal: 300ms;
   --duration-slow: 500ms;
 }
+
+/* ============================================
+   Dark Mode Overrides
+   ============================================ */
+[data-theme="dark"] {
+  --color-primary: #B8956E;
+  --color-primary-light: #C9A882;
+  --color-primary-dark: #9A7B56;
+  --color-secondary: #D4915C;
+  --color-accent: #8FA87E;
+  --color-accent-light: #A3B396;
+
+  --color-cream: #1A1510;
+  --color-warm-white: #141210;
+  --color-linen: #1E1A14;
+  --color-dark: #F0EBE4;
+  --color-text: #C9C0B5;
+  --color-text-light: #9A9189;
+  --color-text-muted: #706860;
+  --color-border: #2E2820;
+  --color-border-dark: #3D352B;
+
+  --color-error: #D4735E;
+  --color-error-bg: #2A1A16;
+  --color-success: #7FA06A;
+  --color-success-bg: #1A2216;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.25);
+  --shadow-lg: 0 8px 30px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 16px 50px rgba(0, 0, 0, 0.35);
+}

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useTheme } from '../context/ThemeContext';
 import '../styles/footer.css';
 
 const NAV_LINKS = [
@@ -12,6 +13,7 @@ const NAV_LINKS = [
 
 export default function Footer() {
   const { t } = useTranslation();
+  const { isDark } = useTheme();
   const year = new Date().getFullYear();
 
   return (
@@ -19,7 +21,11 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__brand">
-            <span className="footer__logo">Embroidera</span>
+            <img
+              src="/embroidera-wordmark-light.png"
+              alt="embroidera"
+              className="footer__logo-img"
+            />
             <p className="footer__tagline">{t('footer.tagline')}</p>
           </div>
 

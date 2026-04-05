@@ -18,6 +18,10 @@
   box-shadow: var(--shadow-sm);
 }
 
+[data-theme="dark"] .navbar--scrolled {
+  background: rgba(20, 18, 16, 0.92);
+}
+
 .navbar__inner {
   display: flex;
   align-items: center;
@@ -29,16 +33,18 @@
 }
 
 .navbar__logo {
-  font-family: var(--font-heading);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  color: var(--color-dark);
-  letter-spacing: 0.03em;
-  transition: color var(--duration-fast);
+  display: flex;
+  align-items: center;
 }
 
-.navbar__logo:hover {
-  color: var(--color-primary);
+.navbar__logo-img {
+  width: 180px;
+  height: auto;
+  transition: opacity var(--duration-fast);
+}
+
+.navbar__logo:hover .navbar__logo-img {
+  opacity: 0.8;
 }
 
 /* Stitch-inspired nav links */
@@ -144,6 +150,10 @@
     pointer-events: none;
     transition: transform var(--duration-normal) var(--ease-out),
                 opacity var(--duration-normal) var(--ease-out);
+  }
+
+  [data-theme="dark"] .navbar__links {
+    background: rgba(20, 18, 16, 0.98);
   }
 
   .navbar__links--open {
