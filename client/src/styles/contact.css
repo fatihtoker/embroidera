@@ -1,0 +1,56 @@
+/* ============================================
+   Contact Page
+   ============================================ */
+
+.contact-page {
+  padding-top: calc(var(--nav-height) + var(--space-3xl));
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: start;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2xl);
+}
+
+.contact-info__title {
+  font-size: var(--text-3xl);
+}
+
+.contact-info__text {
+  color: var(--color-text-light);
+  line-height: var(--leading-relaxed);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  background: var(--color-warm-white);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+@media (max-width: 768px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+  }
+}

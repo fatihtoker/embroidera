@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Ana Sayfa",
+    "workshops": "Atölyeler",
+    "portfolio": "Portfolyo",
+    "about": "Hakkımızda",
+    "contact": "İletişim"
+  },
+  "hero": {
+    "title": "Sevgiyle El Yapımı",
+    "subtitle": "El emeğiyle özenle üretilen benzersiz nakış sanatı. Her parça kendi hikâyesini anlatır.",
+    "cta_workshops": "Atölyeleri Keşfet",
+    "cta_portfolio": "Portfolyoyu Gör"
+  },
+  "home": {
+    "featured_workshops": "Yaklaşan Atölyeler",
+    "featured_workshops_desc": "Yaratıcı atölyelerimize katılın ve nakış sanatını öğrenin.",
+    "featured_products": "Öne Çıkan Eserler",
+    "featured_products_desc": "Koleksiyonumuzdan seçilmiş el yapımı parçalar.",
+    "view_all": "Tümünü Gör",
+    "about_preview_title": "El Sanatının Güzelliği",
+    "about_preview_text": "Her iğne bir meditasyon, her parça bir emek eseri. Dünyanıza sıcaklık ve güzellik katan benzersiz nakış sanatı üretiyoruz.",
+    "learn_more": "Daha Fazla"
+  },
+  "workshops": {
+    "title": "Atölyeler",
+    "subtitle": "Yaratıcı atölyelerimizde nakış sanatını öğrenin. Her seviyeye uygun.",
+    "date": "Tarih",
+    "location": "Konum",
+    "capacity": "Kontenjan",
+    "price": "Ücret",
+    "no_workshops": "Şu anda planlanmış atölye bulunmuyor. Yakında tekrar kontrol edin!",
+    "register": "Kayıt Ol"
+  },
+  "portfolio": {
+    "title": "Portfolyo",
+    "subtitle": "El yapımı nakış eserlerimizden oluşan koleksiyonumuzu keşfedin.",
+    "all": "Tümü",
+    "no_products": "Henüz ürün mevcut değil. Takipte kalın!",
+    "view_details": "Detayları Gör"
+  },
+  "product": {
+    "back": "Portfolyoya Dön",
+    "category": "Kategori",
+    "not_found": "Ürün bulunamadı."
+  },
+  "about": {
+    "title": "Embroidera Hakkında",
+    "intro": "Embroidera'ya hoş geldiniz — geleneğin modern yaratıcılıkla buluştuğu yer.",
+    "story_title": "Hikâyemiz",
+    "story_text": "Embroidera, nakış sanatına duyulan derin bir tutkudan doğdu. Kişisel bir hobi olarak başlayan bu yolculuk, bu güzel zanaatı korumaya ve yeniden canlandırmaya adanmış bir markaya dönüştü. Ürettiğimiz her parça, el emeğinin sıcaklığını, geleneğin inceliğini ve çağdaş tasarım dokunuşunu taşır.",
+    "mission_title": "Misyonumuz",
+    "mission_text": "El sanatının insanları birleştirdiğine inanıyoruz. Atölyelerimiz aracılığıyla ellerinizle yaratmanın keyfini paylaşıyoruz. Ürünlerimizle günlük yaşama benzersiz ve anlamlı sanat katıyoruz.",
+    "values_title": "Değerlerimiz",
+    "value_1": "Her dikişte özgünlük",
+    "value_2": "Sürdürülebilirlik ve bilinçli üretim",
+    "value_3": "Topluluk ve bilgi paylaşımı"
+  },
+  "contact": {
+    "title": "İletişime Geçin",
+    "subtitle": "Bir sorunuz mu var, özel bir sipariş vermek mi istiyorsunuz, yoksa bir atölyeyle mi ilgileniyorsunuz? Sizden haber almayı çok isteriz.",
+    "name": "Adınız",
+    "email": "E-posta Adresiniz",
+    "subject": "Konu",
+    "message": "Mesajınız",
+    "send": "Mesaj Gönder",
+    "sending": "Gönderiliyor...",
+    "success": "Teşekkürler! Mesajınız gönderildi.",
+    "error": "Bir hata oluştu. Lütfen tekrar deneyin."
+  },
+  "footer": {
+    "tagline": "El yapımı sanat & yaratıcı atölyeler",
+    "navigation": "Gezinme",
+    "connect": "Bağlantı",
+    "rights": "Tüm hakları saklıdır."
+  },
+  "admin": {
+    "login": "Admin Girişi",
+    "email": "E-posta",
+    "password": "Şifre",
+    "sign_in": "Giriş Yap",
+    "sign_out": "Çıkış Yap",
+    "dashboard": "Kontrol Paneli",
+    "manage_workshops": "Atölyeler",
+    "manage_products": "Ürünler",
+    "messages": "Mesajlar",
+    "back_to_site": "Siteye Dön",
+    "add_new": "Yeni Ekle",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "confirm_delete": "Bunu silmek istediğinizden emin misiniz?",
+    "status": "Durum",
+    "draft": "Taslak",
+    "published": "Yayında",
+    "archived": "Arşivlenmiş",
+    "featured": "Öne Çıkan",
+    "title_en": "Başlık (EN)",
+    "title_nl": "Başlık (NL)",
+    "title_tr": "Başlık (TR)",
+    "desc_en": "Açıklama (EN)",
+    "desc_nl": "Açıklama (NL)",
+    "desc_tr": "Açıklama (TR)",
+    "image": "Görsel",
+    "images": "Görseller",
+    "upload_image": "Görsel Yükle",
+    "date": "Tarih",
+    "location": "Konum",
+    "capacity": "Kapasite",
+    "price": "Ücret",
+    "category": "Kategori",
+    "no_items": "Henüz öğe yok.",
+    "total_workshops": "Toplam Atölye",
+    "total_products": "Toplam Ürün",
+    "unread_messages": "Okunmamış Mesaj",
+    "login_error": "Geçersiz e-posta veya şifre.",
+    "mark_read": "Okundu olarak işaretle",
+    "from": "Kimden",
+    "no_messages": "Henüz mesaj yok."
+  }
+}

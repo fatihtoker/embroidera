@@ -1,0 +1,16 @@
+{
+  "name": "embroidera-server",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0",
+    "cors": "^2.8.5",
+    "@supabase/supabase-js": "^2.49.0",
+    "multer": "^1.4.5-lts.2",
+    "dotenv": "^16.4.0"
+  }
+}

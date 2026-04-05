@@ -1,0 +1,117 @@
+/* ============================================
+   About Page
+   ============================================ */
+
+.about-page {
+  padding-top: calc(var(--nav-height) + var(--space-3xl));
+}
+
+.about-hero {
+  text-align: center;
+  padding-bottom: var(--space-3xl);
+}
+
+.about-hero__intro {
+  font-size: var(--text-lg);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: var(--space-lg) auto 0;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.about-content--reverse {
+  direction: rtl;
+}
+
+.about-content--reverse > * {
+  direction: ltr;
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.about-text__title {
+  font-size: var(--text-2xl);
+  color: var(--color-dark);
+  margin-bottom: var(--space-sm);
+}
+
+.about-text__body {
+  color: var(--color-text-light);
+  line-height: var(--leading-relaxed);
+}
+
+.about-image {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Values list */
+.values-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.values-list__item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-md);
+  font-size: var(--text-base);
+  color: var(--color-text);
+}
+
+/* Cross-stitch bullet */
+.values-list__icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 3px;
+  position: relative;
+}
+
+.values-list__icon::before,
+.values-list__icon::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 14px;
+  height: 2px;
+  background: var(--color-primary);
+  border-radius: 1px;
+}
+
+.values-list__icon::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.values-list__icon::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .about-content--reverse {
+    direction: ltr;
+  }
+
+  .about-image {
+    max-width: 300px;
+  }
+}

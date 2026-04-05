@@ -1,0 +1,162 @@
+/* ============================================
+   Navbar
+   ============================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  z-index: 1000;
+  transition: background var(--duration-normal), box-shadow var(--duration-normal);
+}
+
+.navbar--scrolled {
+  background: rgba(255, 251, 245, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.navbar__logo {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-dark);
+  letter-spacing: 0.03em;
+  transition: color var(--duration-fast);
+}
+
+.navbar__logo:hover {
+  color: var(--color-primary);
+}
+
+/* Stitch-inspired nav links */
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+.navbar__link {
+  position: relative;
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  transition: color var(--duration-fast);
+}
+
+.navbar__link:hover,
+.navbar__link--active {
+  color: var(--color-primary);
+}
+
+/* Stitch underline effect */
+.navbar__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--color-primary) 0px,
+    var(--color-primary) 4px,
+    transparent 4px,
+    transparent 8px
+  );
+  transition: width var(--duration-normal) var(--ease-out), left var(--duration-normal) var(--ease-out);
+}
+
+.navbar__link:hover::after,
+.navbar__link--active::after {
+  width: 70%;
+  left: 15%;
+}
+
+.navbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+/* Mobile menu toggle */
+.navbar__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: var(--space-sm);
+  cursor: pointer;
+}
+
+.navbar__toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--color-dark);
+  border-radius: 2px;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.navbar__toggle--open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar__toggle--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__toggle--open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile menu */
+@media (max-width: 768px) {
+  .navbar__toggle {
+    display: flex;
+  }
+
+  .navbar__links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0;
+    right: 0;
+    background: rgba(255, 251, 245, 0.98);
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    padding: var(--space-lg);
+    gap: var(--space-xs);
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform var(--duration-normal) var(--ease-out),
+                opacity var(--duration-normal) var(--ease-out);
+  }
+
+  .navbar__links--open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .navbar__link {
+    font-size: var(--text-lg);
+    padding: var(--space-md);
+    width: 100%;
+    text-align: center;
+  }
+}

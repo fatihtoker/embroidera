@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Home",
+    "workshops": "Workshops",
+    "portfolio": "Portfolio",
+    "about": "Over ons",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Met Liefde Handgemaakt",
+    "subtitle": "Unieke borduurkunst, zorgvuldig met de hand gemaakt. Elk stuk vertelt zijn eigen verhaal.",
+    "cta_workshops": "Ontdek Workshops",
+    "cta_portfolio": "Bekijk Portfolio"
+  },
+  "home": {
+    "featured_workshops": "Aankomende Workshops",
+    "featured_workshops_desc": "Doe mee aan een van onze creatieve workshops en leer de kunst van het borduren.",
+    "featured_products": "Uitgelicht Werk",
+    "featured_products_desc": "Een selectie van handgemaakte stukken uit onze collectie.",
+    "view_all": "Bekijk Alles",
+    "about_preview_title": "De Kunst van Handwerk",
+    "about_preview_text": "Elke steek is een meditatie, elk stuk een daad van liefde. Wij creëren unieke borduurkunst die warmte en schoonheid in uw wereld brengt.",
+    "learn_more": "Meer Lezen"
+  },
+  "workshops": {
+    "title": "Workshops",
+    "subtitle": "Leer de kunst van het borduren in onze creatieve workshops. Geschikt voor alle niveaus.",
+    "date": "Datum",
+    "location": "Locatie",
+    "capacity": "Plaatsen",
+    "price": "Prijs",
+    "no_workshops": "Momenteel geen workshops gepland. Kom snel terug!",
+    "register": "Inschrijven"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Ontdek onze collectie van handgemaakte borduurwerken.",
+    "all": "Alles",
+    "no_products": "Nog geen producten beschikbaar. Blijf op de hoogte!",
+    "view_details": "Bekijk Details"
+  },
+  "product": {
+    "back": "Terug naar Portfolio",
+    "category": "Categorie",
+    "not_found": "Product niet gevonden."
+  },
+  "about": {
+    "title": "Over Embroidera",
+    "intro": "Welkom bij Embroidera — waar traditie en moderne creativiteit samenkomen.",
+    "story_title": "Ons Verhaal",
+    "story_text": "Embroidera is geboren uit een diepe passie voor de tijdloze kunst van het borduren. Wat begon als een persoonlijke hobby is uitgegroeid tot een merk dat zich inzet voor het behoud en de vernieuwing van dit prachtige ambacht. Elk stuk dat we maken draagt de warmte van handwerk, de precisie van traditie en een vleugje eigentijds design.",
+    "mission_title": "Onze Missie",
+    "mission_text": "Wij geloven dat handwerk mensen verbindt. Via onze workshops delen we het plezier van creëren met je handen. Via onze producten brengen we unieke, betekenisvolle kunst in het dagelijks leven.",
+    "values_title": "Onze Waarden",
+    "value_1": "Authenticiteit in elke steek",
+    "value_2": "Duurzaamheid en bewust creëren",
+    "value_3": "Gemeenschap en kennisdeling"
+  },
+  "contact": {
+    "title": "Neem Contact Op",
+    "subtitle": "Heeft u een vraag, wilt u een stuk op maat laten maken, of bent u geïnteresseerd in een workshop? We horen graag van u.",
+    "name": "Uw Naam",
+    "email": "Uw E-mail",
+    "subject": "Onderwerp",
+    "message": "Uw Bericht",
+    "send": "Verstuur Bericht",
+    "sending": "Versturen...",
+    "success": "Bedankt! Uw bericht is verstuurd.",
+    "error": "Er is iets misgegaan. Probeer het opnieuw."
+  },
+  "footer": {
+    "tagline": "Handgemaakte kunst & creatieve workshops",
+    "navigation": "Navigatie",
+    "connect": "Verbinden",
+    "rights": "Alle rechten voorbehouden."
+  },
+  "admin": {
+    "login": "Admin Inloggen",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "sign_in": "Inloggen",
+    "sign_out": "Uitloggen",
+    "dashboard": "Dashboard",
+    "manage_workshops": "Workshops",
+    "manage_products": "Producten",
+    "messages": "Berichten",
+    "back_to_site": "Terug naar Site",
+    "add_new": "Nieuw Toevoegen",
+    "edit": "Bewerken",
+    "delete": "Verwijderen",
+    "save": "Opslaan",
+    "cancel": "Annuleren",
+    "confirm_delete": "Weet u zeker dat u dit wilt verwijderen?",
+    "status": "Status",
+    "draft": "Concept",
+    "published": "Gepubliceerd",
+    "archived": "Gearchiveerd",
+    "featured": "Uitgelicht",
+    "title_en": "Titel (EN)",
+    "title_nl": "Titel (NL)",
+    "title_tr": "Titel (TR)",
+    "desc_en": "Beschrijving (EN)",
+    "desc_nl": "Beschrijving (NL)",
+    "desc_tr": "Beschrijving (TR)",
+    "image": "Afbeelding",
+    "images": "Afbeeldingen",
+    "upload_image": "Afbeelding Uploaden",
+    "date": "Datum",
+    "location": "Locatie",
+    "capacity": "Capaciteit",
+    "price": "Prijs",
+    "category": "Categorie",
+    "no_items": "Nog geen items.",
+    "total_workshops": "Totaal Workshops",
+    "total_products": "Totaal Producten",
+    "unread_messages": "Ongelezen Berichten",
+    "login_error": "Ongeldig e-mailadres of wachtwoord.",
+    "mark_read": "Als gelezen markeren",
+    "from": "Van",
+    "no_messages": "Nog geen berichten."
+  }
+}

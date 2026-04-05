@@ -1,0 +1,122 @@
+{
+  "nav": {
+    "home": "Home",
+    "workshops": "Workshops",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Handcrafted with Love",
+    "subtitle": "Unique embroidery art, carefully created by hand. Each piece tells its own story.",
+    "cta_workshops": "Discover Workshops",
+    "cta_portfolio": "View Portfolio"
+  },
+  "home": {
+    "featured_workshops": "Upcoming Workshops",
+    "featured_workshops_desc": "Join one of our creative workshops and learn the art of embroidery.",
+    "featured_products": "Featured Work",
+    "featured_products_desc": "A selection of handcrafted pieces from our collection.",
+    "view_all": "View All",
+    "about_preview_title": "The Art of Handcraft",
+    "about_preview_text": "Every stitch is a meditation, every piece a labor of love. We create unique embroidery art that brings warmth and beauty to your world.",
+    "learn_more": "Learn More"
+  },
+  "workshops": {
+    "title": "Workshops",
+    "subtitle": "Learn the art of embroidery in our creative workshops. Suitable for all levels.",
+    "date": "Date",
+    "location": "Location",
+    "capacity": "Spots",
+    "price": "Price",
+    "no_workshops": "No upcoming workshops at the moment. Check back soon!",
+    "register": "Register"
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Browse our collection of handcrafted embroidery pieces.",
+    "all": "All",
+    "no_products": "No products available yet. Stay tuned!",
+    "view_details": "View Details"
+  },
+  "product": {
+    "back": "Back to Portfolio",
+    "category": "Category",
+    "not_found": "Product not found."
+  },
+  "about": {
+    "title": "About Embroidera",
+    "intro": "Welcome to Embroidera — where tradition meets modern creativity.",
+    "story_title": "Our Story",
+    "story_text": "Embroidera was born from a deep passion for the timeless art of embroidery. What started as a personal hobby has grown into a brand dedicated to preserving and reinventing this beautiful craft. Every piece we create carries the warmth of handwork, the precision of tradition, and a touch of contemporary design.",
+    "mission_title": "Our Mission",
+    "mission_text": "We believe handcraft connects people. Through our workshops, we share the joy of creating with your hands. Through our products, we bring unique, meaningful art into everyday life.",
+    "values_title": "What We Value",
+    "value_1": "Authenticity in every stitch",
+    "value_2": "Sustainability and mindful creation",
+    "value_3": "Community and sharing knowledge"
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Have a question, want to commission a piece, or interested in a workshop? We'd love to hear from you.",
+    "name": "Your Name",
+    "email": "Your Email",
+    "subject": "Subject",
+    "message": "Your Message",
+    "send": "Send Message",
+    "sending": "Sending...",
+    "success": "Thank you! Your message has been sent.",
+    "error": "Something went wrong. Please try again."
+  },
+  "footer": {
+    "tagline": "Handcrafted art & creative workshops",
+    "navigation": "Navigation",
+    "connect": "Connect",
+    "rights": "All rights reserved."
+  },
+  "admin": {
+    "login": "Admin Login",
+    "email": "Email",
+    "password": "Password",
+    "sign_in": "Sign In",
+    "sign_out": "Sign Out",
+    "dashboard": "Dashboard",
+    "manage_workshops": "Workshops",
+    "manage_products": "Products",
+    "messages": "Messages",
+    "back_to_site": "Back to Site",
+    "add_new": "Add New",
+    "edit": "Edit",
+    "delete": "Delete",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm_delete": "Are you sure you want to delete this?",
+    "status": "Status",
+    "draft": "Draft",
+    "published": "Published",
+    "archived": "Archived",
+    "featured": "Featured",
+    "title_en": "Title (EN)",
+    "title_nl": "Title (NL)",
+    "title_tr": "Title (TR)",
+    "desc_en": "Description (EN)",
+    "desc_nl": "Description (NL)",
+    "desc_tr": "Description (TR)",
+    "image": "Image",
+    "images": "Images",
+    "upload_image": "Upload Image",
+    "date": "Date",
+    "location": "Location",
+    "capacity": "Capacity",
+    "price": "Price",
+    "category": "Category",
+    "no_items": "No items yet.",
+    "total_workshops": "Total Workshops",
+    "total_products": "Total Products",
+    "unread_messages": "Unread Messages",
+    "login_error": "Invalid email or password.",
+    "mark_read": "Mark as read",
+    "from": "From",
+    "no_messages": "No messages yet."
+  }
+}
